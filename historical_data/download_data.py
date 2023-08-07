@@ -46,7 +46,7 @@ parser.add_argument("--year", type=int, default=2000,
 args = parser.parse_args()
 
 # Read the file
-file_path = './stations.csv'
+file_path = './data/stations.csv'
 stations_df = pd.read_csv(file_path, skiprows=3)
 
 # Filter by province or station ID if provided

@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        province: ["QUEBEC"]
+        province: ["QUEBEC", "ONTARIO", "MANITOBA"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

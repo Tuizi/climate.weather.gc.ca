@@ -41,8 +41,8 @@ def download_data(station_id, year):
 parser = argparse.ArgumentParser(description="Download weather data.")
 parser.add_argument("--province", help="Specify the province.")
 parser.add_argument("--station_id", type=int, help="Specify the station ID.")
-parser.add_argument("--year", type=int, default=2000,
-                    help="Specify the initial year (default is 2000).")
+parser.add_argument("--year", type=int, default=2015,
+                    help="Specify the initial year (default is 2015).")
 args = parser.parse_args()
 
 # Read the file

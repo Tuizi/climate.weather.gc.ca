@@ -11,6 +11,7 @@ This script is used to download data for specified stations and years.
 ## Installation
 
 Install the required packages using the following command:
+
 ```sh
 pip install -r requirements.txt
 ```
@@ -18,6 +19,7 @@ pip install -r requirements.txt
 ## How to Run
 
 You can run this script using the following command:
+
 ```sh
 python download_data.py [--province PROVINCE] [--station_id STATION_ID] [--year YEAR]
 ```
@@ -26,7 +28,7 @@ python download_data.py [--province PROVINCE] [--station_id STATION_ID] [--year 
 
 - `--province`: Specify the province.
 - `--station_id`: Specify the station ID (integer).
-- `--year`: Specify the year (integer). Default is 2000.
+- `--year`: Specify the year (integer). Default is 2015.
 
 ## Notes
 

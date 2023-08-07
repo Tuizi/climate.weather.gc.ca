@@ -1,11 +1,33 @@
-## Explanation
-The script now accepts either a province or a station ID as a command-line argument. If neither is provided, it downloads data for all stations.
-The downloads are stored in the data folder, with subfolders for each station ID. The file naming format is year-month.
-The script checks if a file already exists before downloading, except for the current month of the current year.
-A timeout of 2 seconds is applied to each download, and the script exits with an error if 5 downloads fail.
-Progress is logged as a percentage, along with an estimated time to completion (ETA).
+# Download Data Script
 
-## Usage Examples
-Download data for a specific station ID: `python script_name.py 1234`
-Download data for a specific province: `python script_name.py QUEBEC`
-Download data for all stations: python `script_name.py`
+## Description
+
+This script is used to download data for specified stations and years.
+
+## Requirements
+
+- Python 3.x
+
+## Installation
+
+Install the required packages using the following command:
+```sh
+pip install -r requirements.txt
+```
+
+## How to Run
+
+You can run this script using the following command:
+```sh
+python download_data.py [--province PROVINCE] [--station_id STATION_ID] [--year YEAR]
+```
+
+### Arguments
+
+- `--province`: Specify the province.
+- `--station_id`: Specify the station ID (integer).
+- `--year`: Specify the year (integer). Default is 2000.
+
+## Notes
+
+Make sure to configure the script with the proper URLs or file paths before running.

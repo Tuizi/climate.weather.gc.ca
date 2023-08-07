@@ -1,0 +1,32 @@
+name: Download data
+on:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2am
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  download-data:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        province: ["QUEBEC", "BRITISH COLUMBIA", "ONTARIO"]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Download data
+      run: python3 ./download_data.py --year 2022 --province "${{ matrix.province }}"
+
+    - uses: EndBug/add-and-commit@v9
+      with:
+        default_author: github_actions
+        message: "Update data for ${{ matrix.province }}"
+        add: "data/*.csv"

@@ -1,4 +1,4 @@
-name: Run stations.sh
+name: Download stations
 on:
   schedule:
     - cron: "0 1 * * *" # Daily at 1am

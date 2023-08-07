@@ -20,10 +20,14 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: | 
+        cd ./historical_data
+        pip install -r requirements.txt
 
     - name: Download data
-      run: python3 ./download_data.py --year 2022 --province "${{ matrix.province }}"
+      run: |
+        cd ./historical_data
+        python3 ./download_data.py --year 2022 --province "${{ matrix.province }}"
 
     - uses: EndBug/add-and-commit@v9
       with:
